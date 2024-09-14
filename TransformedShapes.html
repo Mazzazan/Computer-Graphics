@@ -74,46 +74,119 @@
 
          //------------------------------- sample drawing -----------------------------
 
-         g.save();
-         g.translate(150,150);
-         circle();  // draw a circle of radius 50 centered at (0,0)
-         g.restore();
-
-         g.save();
-         g.translate(450,150);
+         g.save(); // roof triangle
+         g.translate(300,140);
+         g.scale(1.5, 1);
          triangle(); // draw a triangle, centered at (0,0)
          g.restore();
 
-         g.save();
-         g.translate(150,450);
+         g.save(); // circle window
+         g.translate(300,160);
+         g.scale(0.5, 0.5);
+         g.fillStyle = "white";
+         circle();  // draw a circle of radius 50 centered at (0,0)
+         g.restore();
+        //------------------------------------------------
+         g.save(); // center rectangle entrance
+         g.translate(300,290);
+         g.scale(1.5, 2);
+         square();  // draw a square with side 100, centered at (0,0)
+         g.restore();
+
+         g.save(); // left rectangle
+         g.translate(150,315);
+         g.scale(1.5, 1.5);
+         square();  // draw a square with side 100, centered at (0,0)
+         g.restore();
+
+         g.save(); // right rectangle
+         g.translate(450,315);
+         g.scale(1.5, 1.5);
+         square();  // draw a square with side 100, centered at (0,0)
+         g.restore();
+
+         g.save(); // small rectangle entrance
+         g.translate(300,320);
+         g.fillStyle = "white";
+         g.scale(0.4, 0.9);
+         square();  // draw a square with side 100, centered at (0,0)
+         g.restore();
+
+         g.save(); // semi circle entrance
+         g.translate(300,275);
+         g.scale(0.4, 0.4);
+         g.fillStyle = "white";
+         circle();  // draw a circle of radius 50 centered at (0,0)
+         g.restore();
+        //----------------------------------------------------------------
+         g.save(); // left white rectangle window
+         g.translate(160,315);
+         g.fillStyle = "white";
+         g.scale(1.3, 1);
+         square();  // draw a square with side 100, centered at (0,0)
+         g.restore();
+
+         g.save(); // right white rectangle window
+         g.translate(440,315);
+         g.fillStyle = "white";
+         g.scale(1.3, 1);
          square();  // draw a square with side 100, centered at (0,0)
          g.restore();
 
          // draws a red X, consisting of two transformed squares, centered at (0,0)
          // and then moved to the lower right quadrant
-
+        
+         //----------------------------------------------------------------
          g.save();
-         g.fillStyle = "red";
-         g.translate(450,450);
-
-         g.save();
-         g.rotate(Math.PI/4);
-         g.scale(2, 0.5);
-         square();
-         g.restore();
-
-         g.save();
-         g.rotate(-Math.PI/4);
-         g.scale(2,0.5);
-         square();
-         g.restore();
-
-         g.restore();
-
-         g.font = "40px Arial";
          g.fillStyle = "black";
-         g.textAlign = "center";
-         g.fillText("CG IUP Class 2024", canvas.width/2, canvas.height/2);
+         g.translate(160,315);
+        
+         g.save(); //  left vertical rectangle frame
+         g.rotate(-Math.PI/2);
+         g.scale(1, 0.3);
+        //  g.fillStyle = "blue"; // used the colour to differentiate between the two crosses
+         square();
+         g.restore();
+
+         g.save(); // left horizontal rectangle frame
+         g.rotate(Math.PI/1);
+         g.scale(1.3,0.3);
+        //  g.fillStyle = "green"; // same here
+         square();
+         g.restore();
+        //----------------------------------------------------------------
+        g.save();
+        g.fillStyle = "black";
+        g.translate(280,0);
+
+        g.save(); // right vertical rectangle frame
+        g.rotate(-Math.PI/2);
+        g.scale(1, 0.3);
+        //  g.fillStyle = "blue"; // used the colour to differentiate between the two crosses
+        square();
+        g.restore();
+
+        g.save(); // right horizontal rectangle frame
+        g.rotate(Math.PI/1);
+        g.scale(1.3,0.3);
+        //  g.fillStyle = "green"; // same here
+        square();
+        g.restore();
+        //---------------------------------------------------------------- 
+        g.save(); // center red rectangle 
+        g.translate(-140,100);
+        g.scale(5.5, 1);
+        g.fillStyle = "red";
+        square();  // draw a square with side 100, centered at (0,0)
+        g.restore();
+        //----------------------------------------------------------------
+        g.restore();
+
+        g.font = "30px Arial";
+        g.fillStyle = "white";
+        g.textAlign = "center";
+        g.translate(-170,-190);
+        g.fillText("Computer Graphics IUP Class 2024", canvas.width/2, canvas.height/2);
 
          //-------------------------------------------------------------------------
 
